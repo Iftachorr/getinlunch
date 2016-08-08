@@ -32,7 +32,7 @@ def getinlunch(inputfile):
         people = data["people"]
 
         size = 5
-        while (len(people) % size) != 0:
+        while (len(people) % size) != 0 and size > 3: #Damn you prime numbers, I need to find a solution so no one will go to lunch alone :(
             size = size - 1
 
         groups = zip(*[iter(people)]*size)
@@ -41,8 +41,8 @@ def getinlunch(inputfile):
             to = []
             text = "Hi Everone,\n\n Your random bunch for today's Getting in Lunch is:\n"
             for person in group:
-                text = text+person["firstname"] + "\n"
-                to.append(" ".join(person["firstname"],person["surname"],"<"+person["email"]+">"))
+                text = text+ " ".join([person["firstname"], person["surname"]])+ "\n"
+                to.append(" ".join([person["firstname"],person["surname"],"<"+person["email"]+">"]))
 
             subject = "Get in Lunch "+(datetime.datetime.today().strftime("%a %b %y"))
             frm = "Get in Lunch <invite@getinlunch.com>"
