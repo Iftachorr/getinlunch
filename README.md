@@ -1,3 +1,5 @@
+# Get in Lunch
+
 ### What's Get in Lunch?
 It's a super light project for conducting random lunches in your organization.
 Simply create a JSON file with all people that participate and run the script
